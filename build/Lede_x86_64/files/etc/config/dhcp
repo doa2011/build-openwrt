@@ -1,0 +1,228 @@
+
+config dnsmasq
+	option domainneeded '1'
+	option localise_queries '1'
+	option rebind_protection '1'
+	option rebind_localhost '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option resolvfile '/tmp/resolv.conf.d/resolv.conf.auto'
+	option localservice '1'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '100'
+	option limit '150'
+	option leasetime '12h'
+	option ra_slaac '1'
+	list ra_flags 'managed-config'
+	list ra_flags 'other-config'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config odhcpd 'odhcpd'
+	option maindhcp '0'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+	option loglevel '4'
+
+config host
+	option name 'Lee-PC'
+	option mac '44:37:E6:8B:F8:10'
+	option ip '192.168.99.184'
+
+config host
+	option name 'Gen8-VM-DSM5.2'
+	option ip '192.168.99.130'
+	option mac '00:11:32:ba:7e:d9'
+
+config host
+	option name 'Debian'
+	option mac '34:64:a9:9a:5d:48'
+	option ip '192.168.99.2'
+
+config domain
+	option name 'DiskStation'
+	option ip '192.168.99.168'
+
+config host
+	option name 'HP-ILO'
+	option dns '1'
+	option mac '34:64:A9:9A:52:3A'
+	option ip '192.168.99.137'
+
+config host
+	option name 'Gen8-VM'
+	option mac '34:64:a9:9a:52:38'
+	option ip '192.168.99.120'
+
+config host
+	option dns '1'
+	option name 'xiaorong1'
+	option mac 'FC:7C:02:27:AD:4F'
+	option ip '192.168.99.119'
+
+config host
+	option dns '1'
+	option name 'xiaorong2'
+	option mac 'FC:7C:02:88:0A:70'
+	option ip '192.168.99.118'
+
+config domain
+	option name 'Lx901'
+	option ip '192.168.99.228'
+
+config host
+	option name 'S9'
+	option dns '1'
+	option mac '44:91:60:82:D0:E3'
+	option ip '192.168.99.185'
+
+config host
+	option name 'volumio'
+	option dns '1'
+	option mac '00:90:4C:C5:12:38'
+	option ip '192.168.99.222'
+
+config host
+	option dns '1'
+	option mac '94:65:2D:3C:6D:37'
+	option name 'ONEPLUS-5T'
+	option ip '192.168.99.186'
+
+config host
+	option name 'dell'
+	option dns '1'
+	option mac '9C:B6:D0:BB:58:39'
+	option ip '192.168.99.176'
+
+config host
+	option name 'Pioneer'
+	option dns '1'
+	option mac '00:09:B0:4E:0E:C7'
+	option ip '192.168.99.188'
+
+config host
+	option name 'FEITU'
+	option dns '1'
+	option mac '00:0C:29:06:5F:37'
+	option ip '192.168.99.117'
+
+config host
+	option name 'XUNLEI-MINER1'
+	option dns '1'
+	option mac 'B0:D5:9D:31:C5:EB'
+	option ip '192.168.99.116'
+
+config host
+	option name 'Smart-DC1'
+	option dns '1'
+	option mac '84:F3:EB:55:C5:E2'
+	option ip '192.168.99.10'
+
+config host
+	option name 'Smart-XF'
+	option dns '1'
+	option mac 'DC:4F:22:93:BD:B7'
+	option ip '192.168.99.11'
+
+config host
+	option name 'Smart-YYS'
+	option dns '1'
+	option mac '60:01:94:C1:EC:D5'
+	option ip '192.168.99.12'
+
+config host
+	option name 'Smart-LT'
+	option dns '1'
+	option mac '84:0D:8E:57:B2:B4'
+	option ip '192.168.99.13'
+
+config host
+	option name 'Smart-CO2'
+	option dns '1'
+	option mac 'CC:50:E3:27:1F:A4'
+	option ip '192.168.99.14'
+
+config host
+	option name 'Smart-XIAOMI'
+	option dns '1'
+	option mac 'F0:B4:29:B6:DB:0C'
+	option ip '192.168.99.15'
+
+config host
+	option name 'Smart-LEWEI'
+	option dns '1'
+	option mac 'C8:93:46:42:92:DA'
+	option ip '192.168.99.20'
+
+config host
+	option name 'Smart-FCS'
+	option dns '1'
+	option mac 'DC:4F:22:F6:3A:E3'
+	option ip '192.168.99.16'
+
+config host
+	option name 'Smart-Z2M'
+	option dns '1'
+	option mac '4C:11:AE:01:DF:AA'
+	option ip '192.168.99.22'
+
+config host
+	option name 'Smart-esphome'
+	option dns '1'
+	option mac '84:0D:8E:57:B2:B8'
+	option ip '192.168.99.17'
+
+config host
+	option name 'R1'
+	option dns '1'
+	option mac 'FC:7C:02:3A:D3:0F'
+	option ip '192.168.99.29'
+
+config host
+	option name 'RMplus'
+	option dns '1'
+	option mac '34:ea:34:42:c1:a5'
+	option ip '192.168.99.4'
+
+config host
+	option name 'XIAOMI_1S'
+	option dns '1'
+	option mac '64:90:C1:15:15:94'
+	option ip '192.168.99.129'
+
+config host
+	option name 'Smart-hikvison'
+	option dns '1'
+	option mac '84:9A:40:B5:0A:76'
+	option ip '192.168.99.26'
+
+config host
+	option name 'oppo_pig'
+	option dns '1'
+	option ip '192.168.99.181'
+	option mac '1E:C9:19:1A:EB:5C'
+
+config host
+	option mac '22:C3:46:80:CA:77'
+	option ip '192.168.99.218'
+
+config host
+	option name 'Ms-luo'
+	option dns '1'
+	option mac '18:48:CA:B8:5A:25'
+	option ip '192.168.99.199'
+
+config host
+	option name 'smart-M1'
+	option dns '1'
+	option mac 'B4:43:0D:D9:92:17'
+	option ip '192.168.99.21'
+
